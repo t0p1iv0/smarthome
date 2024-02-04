@@ -1,0 +1,26 @@
+server:
+  port: 8083
+
+
+connector:
+  region: EU
+  ak: ${ACCESS_ID}
+  sk: ${ACCESS_SECRET}
+
+spring:
+  datasource:
+    password: postgres
+    username: postgres
+    url: jdbc:postgresql://device_db:5432/device_db
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  liquibase:
+    change-log: classpath:/db/changelog.yaml
+    enabled: true
+  application:
+    name: device-service
+  kafka:
+    bootstrap-servers: kafkaserver:9092

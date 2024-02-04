@@ -1,0 +1,28 @@
+server:
+  port: 8082
+
+schedulers:
+  enabled: true
+
+spring:
+  kafka:
+    bootstrap-servers: kafkaserver:9092
+  datasource:
+    password: postgres
+    username: postgres
+    url: jdbc:postgresql://user_db:5432/user_db
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  liquibase:
+    change-log: classpath:/db/changelog.yaml
+    enabled: true
+  application:
+    name: user-service
+
+jwt:
+  accessTokenTtl: 600
+  accessSecret: secret
+  refreshTokenTtl: 60000

@@ -1,0 +1,10 @@
+server:
+  port: 8080
+
+jwt:
+  tokenTtl: 600
+  secret: secret
+
+springdoc:
+   swagger-ui:
+    url: /api-docs.yaml
